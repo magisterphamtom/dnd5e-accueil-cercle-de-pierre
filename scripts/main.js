@@ -11,6 +11,7 @@
  */
 
 import { decor, tormMedaillon, tormFrappe, demarrerSorts, choisirTorm } from "./classes.js";
+import { ouvrirReglages } from "./reglages.js";
 
 const ID = "dnd5e-accueil-cercle-de-pierre";
 const W = 1600; const H = 1000;
@@ -1044,6 +1045,7 @@ Hooks.once("ready", async () => {
 Hooks.on("getSceneControlButtons", (controls) => {
   const outils = controls?.tokens?.tools; if (!outils) return;
   outils["dnd5e-accueil-cercle-de-pierre-bouton"] = { name: "dnd5e-accueil-cercle-de-pierre-bouton", title: "Le grimoire (écran d'accueil)", icon: "fa-solid fa-book-open", order: 86, toggle: true, visible: true, active: !!Accueil.el, onChange: (event, on) => (on ? Accueil.ouvrir() : Accueil.fermer()) };
+  outils["dnd5e-accueil-cercle-de-pierre-reglages"] = { name: "dnd5e-accueil-cercle-de-pierre-reglages", title: "Réglages du grimoire", icon: "fa-solid fa-sliders", order: 88, button: true, visible: true, onChange: () => ouvrirReglages({ id: ID, titre: "Réglages du grimoire", couleur: "#c9a227", icone: "fa-solid fa-book-open" }) };
 });
 
 window.addEventListener("resize", foundry.utils.debounce(() => { if (Accueil.el) Accueil.vision ? Accueil.afficher() : Accueil.echelle(); }, 200));

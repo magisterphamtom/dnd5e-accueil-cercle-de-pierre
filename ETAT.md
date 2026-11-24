@@ -80,3 +80,6 @@
 - Validé par Stéphane (« c'est nickel ») : mise en ligne du module sur GitHub (magisterphamtom/dnd5e-accueil-cercle-de-pierre), avec release automatique (workflow `release.yml`, zip à fichiers à la racine).
 - Les images aux droits non libres (boussole PICMIX, gantelet de Torm) sortent du module : elles sont rangées dans `worlds/dans-le-maelstrom-dassignes/assets/accueil/` et prises par défaut dans ce monde seulement (ailleurs : boussole et gantelet dessinés). Anciens chemins enregistrés migrés au lancement. Nouveau réglage « Image du symbole de Torm ».
 - Manifeste : url, bugs, manifest (latest), download, dnd5e vérifié 5.3.3, Foundry vérifié 14.368.
+
+## v0.10.0 (en test)
+- Bouton « Réglages » (curseurs) dans la barre d'outils de gauche, sous le bouton de l'écran : chacun y règle son écran (style, habillage, tailles, animations…) ; le MJ / Gardien voit en plus les réglages de la table et la configuration avancée. Fichier `scripts/reglages.js`, commun aux écrans d'accueil.
