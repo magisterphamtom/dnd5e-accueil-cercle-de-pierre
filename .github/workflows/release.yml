@@ -1,0 +1,25 @@
+# Publication d'une release (faite par Stéphane sur GitHub, tag vX.Y.Z) :
+# met à jour version et download dans module.json, crée le zip (fichiers à la racine) et joint les deux à la release.
+name: Release
+on:
+  release:
+    types: [published]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Préparer le zip
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          jq --arg v "$VERSION" --arg dl "https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF_NAME}/dnd5e-accueil-cercle-de-pierre.zip" \
+            '.version = $v | .download = $dl' module.json > module.tmp && mv module.tmp module.json
+          zip -r dnd5e-accueil-cercle-de-pierre.zip module.json scripts styles fonts README.md LICENSE ETAT.md
+      - name: Joindre à la release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            module.json
+            dnd5e-accueil-cercle-de-pierre.zip

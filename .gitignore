@@ -1,0 +1,7 @@
+node_modules/
+*.zip
+.DS_Store
+Thumbs.db
+# Images aux droits non libres : jamais dans le dépôt (elles vivent dans le dossier du monde)
+assets/boussole.webp
+assets/torm.webp
