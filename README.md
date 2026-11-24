@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/banner.png" alt="dnd5e-accueil-cercle-de-pierre" width="100%"></p>
+
 # D&D 5e – Accueil du Cercle de Pierre
 
 Écran d'accueil pour Foundry VTT (v13 / v14, système dnd5e), fait pour le monde **Le Cercle de Pierre** de magisterphamtom. Il s'ouvre à chaque session, sur fond transparent : la scène d'arrivée reste visible derrière.
